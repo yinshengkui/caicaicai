@@ -3,9 +3,9 @@
 
 
 
-var flag_arr = [-1];
-var bei = 50;
-var data_result_last3 = [2, 1, 8, 9, 4];
+var flag_arr = [1,-1];
+var bei = 100;
+var data_result_last3 = [9, 3, 1, 5, 7];
 var data_result_last4 = [0, 0, 0, 0, 0];
 
 
@@ -79,24 +79,48 @@ var touzhu_queding = function(data) {
 
         console.log("data_result_last2中间=" + data_result_last2);
 
+        
         if (data_result_last2.length == 1) {
-            for (var p = 0; p < 4; p++) {
-                data_result_last2.push(data_result_last3[p]);
-            }
+            for (var p = 0, w = 0; p < 5, w < 4; p++) {
+                if (!contains(data_result_last2, data_result_last3[p])) {
+                    data_result_last2.push(data_result_last3[p]);
+                    w++;
+                } else {
+                    continue;
+                }
 
+            }
         } else if (data_result_last2.length == 2) {
-            for (var p = 0; p < 3; p++) {
-                data_result_last2.push(data_result_last3[p]);
+            for (var p = 0, w = 0; p < 5, w < 3; p++) {
+                if (!contains(data_result_last2, data_result_last3[p])) {
+                    data_result_last2.push(data_result_last3[p]);
+                    w++;
+                } else {
+                    continue;
+                }
+
             }
 
         } else if (data_result_last2.length == 3) {
-            for (var p = 0; p < 2; p++) {
-                data_result_last2.push(data_result_last3[p]);
+            for (var p = 0, w = 0; p < 5, w < 2; p++) {
+                if (!contains(data_result_last2, data_result_last3[p])) {
+                    data_result_last2.push(data_result_last3[p]);
+                    w++;
+                } else {
+                    continue;
+                }
+
             }
 
         } else if (data_result_last2.length == 4) {
-            for (var p = 0; p < 1; p++) {
-                data_result_last2.push(data_result_last3[p]);
+            for (var p = 0, w = 0; p < 5, w < 1; p++) {
+                if (!contains(data_result_last2, data_result_last3[p])) {
+                    data_result_last2.push(data_result_last3[p]);
+                    w++;
+                } else {
+                    continue;
+                }
+
             }
 
         } else if (data_result_last2.length == 5) {
